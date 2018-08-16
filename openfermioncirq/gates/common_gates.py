@@ -100,18 +100,11 @@ class XXYYGate(cirq.EigenGate,
             degs: The exponent angle, in degrees.
             duration: The exponent as a duration of time.
         """
-        if len([1 for e in [half_turns, rads, degs, duration]
-                if e is not None]) > 1:
-            raise ValueError('Redundant exponent specification. '
-                             'Use ONE of half_turns, rads, degs, or duration.')
-
-        if duration is not None:
-            exponent = 2 * duration / numpy.pi
-        else:
-            exponent = cirq.value.chosen_angle_to_half_turns(
-                    half_turns=half_turns,
-                    rads=rads,
-                    degs=degs)
+        exponent = cirq.value.chosen_angle_to_half_turns(
+            half_turns=half_turns,
+            rads=rads,
+            degs=degs,
+            duration=duration)
 
         super().__init__(exponent=exponent)
 
@@ -208,18 +201,11 @@ class YXXYGate(cirq.EigenGate,
             degs: The exponent angle, in degrees.
             duration: The exponent as a duration of time.
         """
-        if len([1 for e in [half_turns, rads, degs, duration]
-                if e is not None]) > 1:
-            raise ValueError('Redundant exponent specification. '
-                             'Use ONE of half_turns, rads, degs, or duration.')
-
-        if duration is not None:
-            exponent = 2 * duration / numpy.pi
-        else:
-            exponent = cirq.value.chosen_angle_to_half_turns(
-                    half_turns=half_turns,
-                    rads=rads,
-                    degs=degs)
+        exponent = cirq.value.chosen_angle_to_half_turns(
+            half_turns=half_turns,
+            rads=rads,
+            degs=degs,
+            duration=duration)
 
         super().__init__(exponent=exponent)
 
@@ -319,18 +305,11 @@ class ZZGate(cirq.EigenGate,
             degs: The exponent angle, in degrees.
             duration: The exponent as a duration of time.
         """
-        if len([1 for e in [half_turns, rads, degs, duration]
-                if e is not None]) > 1:
-            raise ValueError('Redundant exponent specification. '
-                             'Use ONE of half_turns, rads, degs, or duration.')
-
-        if duration is not None:
-            exponent = 2 * duration / numpy.pi
-        else:
-            exponent = cirq.value.chosen_angle_to_half_turns(
-                    half_turns=half_turns,
-                    rads=rads,
-                    degs=degs)
+        exponent = cirq.value.chosen_angle_to_half_turns(
+            half_turns=half_turns,
+            rads=rads,
+            degs=degs,
+            duration=duration)
 
         super().__init__(exponent=exponent)
 
