@@ -16,9 +16,9 @@ from typing import Optional, Union
 
 import numpy
 
-from openfermioncirq.gates.angle import chosen_angle_to_half_turns
-
 import cirq
+
+from openfermioncirq.gates.angle import chosen_angle_to_half_turns
 
 
 class Rot111Gate(cirq.EigenGate,
