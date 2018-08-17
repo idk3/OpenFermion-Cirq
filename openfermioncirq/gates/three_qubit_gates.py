@@ -16,6 +16,8 @@ from typing import Optional, Union
 
 import numpy
 
+from openfermioncirq.gates.angle import chosen_angle_to_half_turns
+
 import cirq
 
 
@@ -40,7 +42,7 @@ class Rot111Gate(cirq.EigenGate,
             rads: Relative phasing of CCZ's eigenstates, in radians.
             degs: Relative phasing of CCZ's eigenstates, in degrees.
         """
-        super().__init__(exponent=cirq.chosen_angle_to_half_turns(
+        super().__init__(exponent=chosen_angle_to_half_turns(
             half_turns=half_turns,
             rads=rads,
             degs=degs))
@@ -92,7 +94,7 @@ class ControlledXXYYGate(cirq.EigenGate,
                  degs: Optional[float]=None,
                  duration: Optional[float]=None) -> None:
 
-        exponent = cirq.value.chosen_angle_to_half_turns(
+        exponent = chosen_angle_to_half_turns(
             half_turns=half_turns,
             rads=rads,
             degs=degs,
@@ -172,7 +174,7 @@ class ControlledYXXYGate(cirq.EigenGate,
                  degs: Optional[float]=None,
                  duration: Optional[float]=None) -> None:
 
-        exponent = cirq.value.chosen_angle_to_half_turns(
+        exponent = chosen_angle_to_half_turns(
             half_turns=half_turns,
             rads=rads,
             degs=degs,

@@ -18,6 +18,8 @@ import numpy
 
 import cirq
 
+from openfermioncirq.gates.angle import chosen_angle_to_half_turns
+
 
 class FermionicSwapGate(cirq.InterchangeableQubitsGate,
                         cirq.KnownMatrix,
@@ -100,7 +102,7 @@ class XXYYGate(cirq.EigenGate,
             degs: The exponent angle, in degrees.
             duration: The exponent as a duration of time.
         """
-        exponent = cirq.value.chosen_angle_to_half_turns(
+        exponent = chosen_angle_to_half_turns(
             half_turns=half_turns,
             rads=rads,
             degs=degs,
@@ -201,7 +203,7 @@ class YXXYGate(cirq.EigenGate,
             degs: The exponent angle, in degrees.
             duration: The exponent as a duration of time.
         """
-        exponent = cirq.value.chosen_angle_to_half_turns(
+        exponent = chosen_angle_to_half_turns(
             half_turns=half_turns,
             rads=rads,
             degs=degs,
@@ -305,7 +307,7 @@ class ZZGate(cirq.EigenGate,
             degs: The exponent angle, in degrees.
             duration: The exponent as a duration of time.
         """
-        exponent = cirq.value.chosen_angle_to_half_turns(
+        exponent = chosen_angle_to_half_turns(
             half_turns=half_turns,
             rads=rads,
             degs=degs,
